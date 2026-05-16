@@ -1,0 +1,16 @@
+/* Polished logout button */
+.md-nav-logout,.md-mobile-logout{
+  min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 18px;border-radius:999px;border:1px solid rgba(180,35,24,.20);
+  background:linear-gradient(135deg,#fff7f6,#fff0ef);color:#b42318;
+  font-family:inherit;font-size:16px;font-weight:950;cursor:pointer;
+  box-shadow:0 8px 18px rgba(180,35,24,.06);
+}
+.md-nav-logout::before,.md-mobile-logout::before{
+  content:"";width:9px;height:9px;border-radius:50%;background:#b42318;box-shadow:0 0 0 4px rgba(180,35,24,.10)
+}
+.md-nav-logout:hover,.md-mobile-logout:hover{
+  background:linear-gradient(135deg,#b42318,#d92d20);color:white;
+}
+.md-nav-logout:hover::before,.md-mobile-logout:hover::before{background:white;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+.md-mobile-logout{width:100%;min-height:48px;border-radius:16px}

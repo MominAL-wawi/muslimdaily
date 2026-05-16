@@ -1,0 +1,249 @@
+:root{
+  --green:#064e3b;
+  --green-2:#0f766e;
+  --gold:#c28a2c;
+  --cream:#fff8e6;
+  --bg:#f8faf7;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:rgba(194,138,44,.22);
+  --shadow:0 24px 70px rgba(6,78,59,.10);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(194,138,44,.18),transparent 24%),
+    radial-gradient(circle at 92% 10%,rgba(6,78,59,.14),transparent 28%),
+    linear-gradient(135deg,#fffaf0,#f7fff8 48%,#eef6ff);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:inherit}
+.app-shell{min-height:100vh}
+.container{max-width:1180px;margin:0 auto;padding:0 18px}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 0;
+}
+.logo{height:64px;filter:drop-shadow(0 10px 20px rgba(6,78,59,.12))}
+.nav-links{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.nav-pill{
+  padding:11px 16px;border-radius:999px;background:rgba(255,255,255,.72);
+  border:1px solid var(--border);font-weight:800;color:var(--green);
+}
+.hero{
+  display:grid;grid-template-columns:1.06fr .94fr;gap:18px;align-items:stretch;padding:22px 0;
+}
+.hero-card,.card{
+  background:rgba(255,255,255,.92);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;
+  backdrop-filter:blur(12px);
+}
+.hero-main{
+  position:relative;overflow:hidden;color:white;
+  background:
+    radial-gradient(circle at 18% 20%,rgba(255,232,163,.28),transparent 24%),
+    linear-gradient(135deg,#043927,#0f766e 52%,#155eef);
+}
+.hero-main:before{
+  content:"۞";position:absolute;left:28px;top:22px;font-size:90px;color:rgba(255,232,163,.22)
+}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.16;margin:0 0 16px;font-weight:900}
+.hero h1:before{content:"﴿ ";color:#ffe8a3}.hero h1:after{content:" ﴾";color:#ffe8a3}
+.hero p{font-size:18px;line-height:2;color:rgba(255,255,255,.85)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+.card-title{font-size:28px;margin:0 0 16px;font-weight:900}
+.card-title:after{content:"";display:block;width:86px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--green));margin-top:10px}
+.muted{color:var(--muted);line-height:1.8}
+.btn{
+  border:0;border-radius:16px;padding:13px 18px;font-weight:900;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:#edf7f3;color:var(--green);min-height:48px;
+}
+.btn.primary{background:linear-gradient(135deg,var(--green),var(--green-2));color:white}
+.btn.gold{background:linear-gradient(135deg,#a16207,var(--gold));color:white}
+.btn.danger{background:#fee4e2;color:#d92d20}
+.btn.block{width:100%}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:7px}
+.input{
+  width:100%;border:1px solid rgba(100,116,139,.22);background:white;border-radius:16px;
+  padding:13px 14px;min-height:48px;outline:none;
+}
+.input:focus{border-color:var(--green-2);box-shadow:0 0 0 4px rgba(15,118,110,.10)}
+.stat{
+  background:linear-gradient(180deg,#fffdf7,#fff);
+  border:1px solid var(--border);border-radius:22px;padding:18px;
+}
+.stat span{display:block;color:var(--muted);font-size:13px}
+.stat strong{display:block;font-size:30px;color:var(--green);margin-top:6px}
+.prayer-grid,.quran-plan,.daily-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.prayer,.quran-box,.dhikr-card,.hadith-box{
+  background:linear-gradient(180deg,var(--cream),#fff);
+  border:1px solid var(--border);border-radius:22px;padding:16px;
+}
+.prayer{text-align:center}.prayer strong{display:block;direction:ltr;font-size:24px;color:var(--green);margin-top:8px}
+.quran-plan{grid-template-columns:repeat(3,1fr)}
+.quran-box strong{display:block;font-size:28px;color:var(--green);margin-top:8px}
+.badge{display:inline-flex;padding:6px 11px;border-radius:999px;background:#f4f0e5;color:var(--green);font-size:13px;border:1px solid var(--border)}
+.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px;border-bottom:1px solid rgba(100,116,139,.16);text-align:right}
+.done{text-decoration:line-through;color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tab{padding:10px 14px;border-radius:999px;background:#f4f0e5;color:var(--green);font-weight:800}.tab.active{background:var(--green);color:white}
+.hadith-text{font-size:20px;line-height:2.35;background:linear-gradient(180deg,#fff8e6,#fffdf5);border:1px solid rgba(194,138,44,.45);border-radius:24px;padding:20px}
+.explain{background:linear-gradient(180deg,#f0fdf4,#fff);border:1px solid rgba(15,118,110,.25);border-radius:24px;padding:20px;line-height:2}
+.toolbar{display:grid;grid-template-columns:auto auto 1fr auto auto;gap:10px;margin:16px 0}
+.footer{text-align:center;color:var(--muted);padding:30px 18px;font-size:13px}
+.alert{padding:13px 15px;border-radius:18px;border:1px solid #fed7aa;background:#fff7ed;color:#9a3412;line-height:1.8}
+@media(max-width:940px){
+  .hero{grid-template-columns:1fr}.form-grid,.quran-plan,.daily-grid,.prayer-grid{grid-template-columns:1fr}
+  .s3,.s4,.s5,.s6,.s7,.s8{grid-column:span 12}
+  .toolbar{grid-template-columns:1fr 1fr}.toolbar .select-wide{grid-column:1/-1}
+  .navbar{align-items:flex-start}.logo{height:56px}
+}
+
+.quran-box small{display:block;margin-top:4px;line-height:1.8}
+
+
+/* Final polish: motion, glow, premium Quranic feel */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(255,232,163,.22), transparent 18%),
+    radial-gradient(circle at 82% 18%, rgba(15,118,110,.18), transparent 22%),
+    radial-gradient(circle at 50% 95%, rgba(194,138,44,.12), transparent 30%);
+  animation: auroraMove 12s ease-in-out infinite alternate;
+  z-index:-1;
+}
+@keyframes auroraMove{
+  from{filter:hue-rotate(0deg) blur(0px); transform:scale(1)}
+  to{filter:hue-rotate(12deg) blur(1px); transform:scale(1.04)}
+}
+.card,.hero-card,.panel{transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+.card:hover,.hero-card:hover{transform: translateY(-4px);box-shadow:0 28px 90px rgba(6,78,59,.16) !important;border-color:rgba(194,138,44,.45) !important}
+.btn{position:relative;overflow:hidden;transition:transform .18s ease, box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(6,78,59,.18)}
+.btn:after{content:"";position:absolute;inset:0;transform:translateX(110%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transition:transform .6s ease}
+.btn:hover:after{transform:translateX(-110%)}
+.glow-card{position:relative;overflow:hidden}
+.glow-card:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle, rgba(255,232,163,.35), transparent 65%);left:-90px;top:-110px;animation: softPulse 4s ease-in-out infinite}
+@keyframes softPulse{0%,100%{opacity:.45; transform:scale(.95)}50%{opacity:.85; transform:scale(1.12)}}
+.motivation-card{min-height:100%}
+.motivation-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;position:relative;z-index:1}
+.motivation-text{font-size:23px;line-height:2;color:#064e3b;font-weight:900;margin:18px 0 8px;position:relative;z-index:1}
+.message-orb{height:78px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.orb-core{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff8e6;background:radial-gradient(circle at 30% 25%, #ffe8a3, #c28a2c 38%, #064e3b 88%);box-shadow:0 0 34px rgba(194,138,44,.45), inset 0 0 20px rgba(255,255,255,.22);animation: floatOrb 3.2s ease-in-out infinite}
+@keyframes floatOrb{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(12deg)}}
+.pulse-badge{animation:pulseBadge 2.4s ease-in-out infinite}
+@keyframes pulseBadge{0%,100%{box-shadow:0 0 0 0 rgba(194,138,44,.28)}50%{box-shadow:0 0 0 9px rgba(194,138,44,0)}}
+.quran-box,.prayer,.dhikr-card,.hadith-box{transition: transform .22s ease, box-shadow .22s ease}
+.quran-box:hover,.prayer:hover,.dhikr-card:hover{transform:translateY(-3px) scale(1.01);box-shadow:0 18px 38px rgba(6,78,59,.12)}
+.input{transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease}
+.input:focus{transform:translateY(-1px)}
+.logo{animation:logoGlow 4s ease-in-out infinite}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 10px 20px rgba(6,78,59,.12))}50%{filter:drop-shadow(0 12px 24px rgba(194,138,44,.28))}}
+.offline-pill{position:fixed;bottom:18px;left:18px;padding:10px 14px;border-radius:999px;background:#fff8e6;color:#064e3b;border:1px solid rgba(194,138,44,.35);box-shadow:0 12px 32px rgba(6,78,59,.12);z-index:50;font-weight:900}
+@media (prefers-reduced-motion: reduce){*,*:before,*:after{animation:none !important; transition:none !important}}
+
+
+
+/* FINAL FIX: dashboard order, today info strip, adhkar, APK/offline navigation */
+.today-strip{
+  grid-column:1/-1;
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:15px 18px;
+  background:linear-gradient(135deg,rgba(6,78,59,.96),rgba(15,118,110,.9));
+  color:white;
+  border:1px solid rgba(255,232,163,.35);
+  box-shadow:0 22px 60px rgba(6,78,59,.18);
+}
+.today-strip-glow{
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,232,163,.38),transparent 68%);
+  left:-70px;
+  top:-90px;
+  animation:softPulse 4s ease-in-out infinite;
+}
+.today-strip-content{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.today-strip strong{font-size:20px}
+.today-strip span:not(.today-dot),.today-strip small{
+  color:rgba(255,255,255,.88);
+  font-weight:800;
+}
+.today-dot{
+  color:#ffe8a3;
+  filter:drop-shadow(0 0 8px rgba(255,232,163,.75));
+}
+.dashboard-flow .prayer-card{
+  order:-1;
+}
+.adhkar-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:14px;
+}
+.dhikr-title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+.dhikr-title-row h3{
+  margin:0;
+  color:#064e3b;
+  font-size:22px;
+}
+.dhikr-text{
+  line-height:2.15;
+  font-size:17px;
+  color:#334155;
+}
+.dhikr-progress{margin:12px 0}
+.progress-line{
+  height:9px;
+  border-radius:999px;
+  background:#e8efe9;
+  overflow:hidden;
+  margin-top:8px;
+}
+.progress-line i{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,#c28a2c,#064e3b);
+  transition:width .25s ease;
+}
+.dhikr-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+@media(max-width:760px){
+  .today-strip-content{gap:8px}
+  .today-strip strong{
+    width:100%;
+    font-size:24px;
+  }
+}

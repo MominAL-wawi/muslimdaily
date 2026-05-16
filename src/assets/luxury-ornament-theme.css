@@ -1,0 +1,1919 @@
+/* Muslim Daily Luxury Ornament Theme - based on the new logo */
+
+:root{
+  --luxury-ink:#0c1727;
+  --luxury-muted:#667085;
+  --luxury-emerald:#063f36;
+  --luxury-emerald-2:#0b6b5d;
+  --luxury-emerald-3:#0f8a78;
+  --luxury-gold:#c78a17;
+  --luxury-gold-2:#f4c765;
+  --luxury-cream:#fff9ec;
+  --luxury-card:#fffdf8;
+  --luxury-line:#ecd8aa;
+  --luxury-danger:#b42318;
+  --luxury-shadow:0 24px 70px rgba(6,63,54,.14);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  color:var(--luxury-ink);
+  font-family:"Tajawal","Cairo","Noto Kufi Arabic","Segoe UI",Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(244,199,101,.32), transparent 28%),
+    radial-gradient(circle at 86% 14%, rgba(15,138,120,.22), transparent 32%),
+    radial-gradient(circle at 50% 90%, rgba(199,138,23,.15), transparent 34%),
+    linear-gradient(135deg,#fff9ea 0%,#f7fff8 48%,#eaf8f6 100%);
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.28;
+  background-image:
+    linear-gradient(30deg, rgba(199,138,23,.18) 12%, transparent 12.5%, transparent 87%, rgba(199,138,23,.18) 87.5%, rgba(199,138,23,.18)),
+    linear-gradient(150deg, rgba(199,138,23,.14) 12%, transparent 12.5%, transparent 87%, rgba(199,138,23,.14) 87.5%, rgba(199,138,23,.14));
+  background-size:58px 100px;
+  mix-blend-mode:multiply;
+}
+
+.luxury-app{
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+}
+
+.luxury-bg-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(8px);
+  pointer-events:none;
+  z-index:-1;
+  opacity:.45;
+}
+
+.luxury-bg-orb--one{
+  width:360px;
+  height:360px;
+  top:90px;
+  right:-120px;
+  background:radial-gradient(circle,rgba(15,138,120,.22),transparent 70%);
+}
+
+.luxury-bg-orb--two{
+  width:420px;
+  height:420px;
+  bottom:40px;
+  left:-150px;
+  background:radial-gradient(circle,rgba(244,199,101,.28),transparent 70%);
+}
+
+.md-container{
+  width:min(1180px,calc(100% - 32px));
+  margin-inline:auto;
+}
+
+.luxury-header{
+  padding:28px 0 16px;
+}
+
+.md-header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.luxury-brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:var(--luxury-ink);
+}
+
+.luxury-logo-wrap{
+  width:72px;
+  height:72px;
+  border-radius:26px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#0a4f43,#062d28);
+  box-shadow:0 18px 40px rgba(6,63,54,.24), inset 0 0 0 1px rgba(244,199,101,.55);
+  overflow:hidden;
+  position:relative;
+}
+
+.luxury-logo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.25),transparent 65%);
+  transform:rotate(20deg);
+  animation:luxury-shine 5s ease-in-out infinite;
+}
+
+@keyframes luxury-shine{
+  0%,65%{translate:80px 0;opacity:0}
+  75%{opacity:1}
+  100%{translate:-80px 0;opacity:0}
+}
+
+.luxury-logo-wrap img{
+  width:92px;
+  height:92px;
+  object-fit:contain;
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.22));
+}
+
+.luxury-brand-text strong{
+  display:block;
+  font-size:25px;
+  font-weight:1000;
+  letter-spacing:.2px;
+}
+
+.luxury-brand-text small{
+  display:block;
+  color:var(--luxury-muted);
+  font-size:14px;
+  font-weight:800;
+  margin-top:2px;
+}
+
+.luxury-nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.luxury-nav a,
+.md-nav a{
+  min-height:48px;
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid rgba(199,138,23,.25);
+  background:rgba(255,255,255,.72);
+  color:#06473d;
+  text-decoration:none;
+  font-weight:1000;
+  box-shadow:0 12px 30px rgba(6,63,54,.06);
+  backdrop-filter:blur(12px);
+  transition:.18s ease;
+}
+
+.luxury-nav a:hover,
+.md-nav a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(6,63,54,.12);
+}
+
+.luxury-nav a.router-link-active,
+.md-nav a.router-link-active{
+  background:linear-gradient(135deg,var(--luxury-emerald),var(--luxury-emerald-2));
+  color:white;
+  border-color:transparent;
+  box-shadow:0 18px 42px rgba(6,63,54,.22);
+}
+
+.md-nav a[href="/login"],
+.md-nav a[href="/register"],
+.md-mobile-menu a[href="/login"],
+.md-mobile-menu a[href="/register"],
+.md-nav-logout,
+.md-mobile-logout,
+.registration-info,
+.phone-info,
+.whatsapp-info,
+.offline-banner,
+.saved-offline-banner,
+.eye,
+.eye-icon,
+.icon-eye,
+[data-icon="eye"],
+[class*="eye"]{
+  display:none !important;
+}
+
+.luxury-menu-btn,
+.md-menu-btn{
+  display:none;
+  width:54px;
+  height:54px;
+  border:1px solid rgba(199,138,23,.32);
+  border-radius:18px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 12px 26px rgba(6,63,54,.08);
+}
+
+.luxury-menu-btn span,
+.md-menu-btn span{
+  display:block;
+  width:24px;
+  height:3px;
+  margin:5px auto;
+  border-radius:99px;
+  background:var(--luxury-emerald);
+}
+
+.luxury-main{
+  padding:26px 0 54px;
+}
+
+.md-card,
+.luxury-card{
+  border:1px solid rgba(199,138,23,.30);
+  border-radius:34px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,252,244,.95)),
+    radial-gradient(circle at 0 0,rgba(244,199,101,.16),transparent 42%);
+  box-shadow:var(--luxury-shadow);
+  position:relative;
+  overflow:hidden;
+  padding:32px;
+}
+
+.md-card::after,
+.luxury-card::after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border-radius:26px;
+  border:1px solid rgba(199,138,23,.12);
+  pointer-events:none;
+}
+
+.luxury-page,
+.dashboard-page{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.luxury-hero{
+  min-height:210px;
+  border-radius:38px;
+  border:1px solid rgba(244,199,101,.42);
+  background:
+    radial-gradient(circle at 18% 18%,rgba(244,199,101,.34),transparent 24%),
+    radial-gradient(circle at 92% 12%,rgba(15,138,120,.35),transparent 32%),
+    linear-gradient(135deg,#083f37 0%,#0b6b5d 56%,#07352f 100%);
+  color:white;
+  padding:34px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  box-shadow:0 28px 75px rgba(6,63,54,.25);
+  position:relative;
+  overflow:hidden;
+}
+
+.luxury-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.18;
+  background:
+    conic-gradient(from 45deg at 50% 50%, transparent 0 12%, #fff 12% 13%, transparent 13% 25%, #fff 25% 26%, transparent 26% 100%);
+  background-size:90px 90px;
+}
+
+.luxury-hero > *{
+  position:relative;
+  z-index:1;
+}
+
+.luxury-hero h1{
+  margin:12px 0 10px;
+  font-size:clamp(34px,5vw,62px);
+  line-height:1.08;
+  font-weight:1000;
+  letter-spacing:-1px;
+}
+
+.luxury-hero p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  font-weight:750;
+}
+
+.luxury-hero--small{
+  min-height:180px;
+}
+
+.luxury-hero__date{
+  min-width:175px;
+  border:1px solid rgba(244,199,101,.42);
+  border-radius:28px;
+  background:rgba(255,255,255,.10);
+  padding:22px;
+  text-align:center;
+  backdrop-filter:blur(12px);
+}
+
+.luxury-hero__date strong{
+  display:block;
+  font-size:25px;
+  color:var(--luxury-gold-2);
+  margin-bottom:8px;
+}
+
+.luxury-hero__date span{
+  display:block;
+  color:rgba(255,255,255,.84);
+  font-weight:800;
+}
+
+.luxury-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:34px;
+  padding:7px 14px;
+  border:1px solid rgba(199,138,23,.30);
+  border-radius:999px;
+  background:rgba(255,250,236,.86);
+  color:var(--luxury-emerald);
+  font-weight:1000;
+  font-size:14px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+.luxury-chip::before{
+  content:"✦";
+  color:var(--luxury-gold);
+  font-size:13px;
+}
+
+.luxury-dashboard-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:26px;
+}
+
+.luxury-card-head,
+.md-section-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+  z-index:1;
+}
+
+.luxury-card-head h2,
+.md-section-row h2,
+.md-section-head h2{
+  margin:14px 0 8px;
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.15;
+  font-weight:1000;
+  color:var(--luxury-ink);
+  position:relative;
+}
+
+.luxury-card-head h2::after,
+.md-section-row h2::after,
+.md-section-head h2::after{
+  content:"";
+  display:block;
+  width:86px;
+  height:5px;
+  border-radius:999px;
+  margin-top:12px;
+  background:linear-gradient(90deg,var(--luxury-gold),var(--luxury-emerald));
+}
+
+.luxury-card-head p,
+.muted{
+  color:var(--luxury-muted);
+  font-weight:800;
+  margin:0;
+}
+
+.luxury-btn,
+.md-btn{
+  border:0;
+  min-height:50px;
+  padding:12px 22px;
+  border-radius:18px;
+  font-family:inherit;
+  font-weight:1000;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.luxury-btn:hover,
+.md-btn:hover{
+  transform:translateY(-2px);
+}
+
+.luxury-btn--emerald,
+.luxury-btn--primary,
+.md-btn--primary{
+  color:white;
+  background:linear-gradient(135deg,var(--luxury-emerald),var(--luxury-emerald-3));
+  box-shadow:0 16px 36px rgba(6,63,54,.18);
+}
+
+.luxury-btn--gold,
+.md-btn--gold{
+  color:#2a1a00;
+  background:linear-gradient(135deg,#f6cf70,#c78917);
+  box-shadow:0 18px 38px rgba(199,138,23,.24);
+}
+
+.luxury-btn--ghost,
+.md-btn--soft{
+  color:var(--luxury-emerald);
+  background:#edf9f4;
+  border:1px solid rgba(15,138,120,.16);
+}
+
+.luxury-btn--danger,
+.md-btn--danger{
+  color:#b42318;
+  background:#fff0ee;
+  border:1px solid rgba(180,35,24,.18);
+}
+
+.luxury-note{
+  margin:18px 0;
+  padding:16px 20px;
+  border-radius:20px;
+  background:#edf9f4;
+  color:var(--luxury-emerald);
+  font-weight:900;
+}
+
+.luxury-alert,
+.md-alert{
+  margin:20px 0 0;
+  padding:18px 20px;
+  border-radius:20px;
+  background:#fff4e9;
+  border:1px solid #ffd0a3;
+  color:#9a3412;
+  font-weight:1000;
+}
+
+.luxury-prayer-grid,
+.prayer-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:16px;
+  margin-top:26px;
+}
+
+.luxury-prayer-item,
+.prayer-item{
+  border:1px solid rgba(199,138,23,.30);
+  border-radius:24px;
+  padding:22px 14px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 0,rgba(244,199,101,.18),transparent 58%),
+    linear-gradient(180deg,#fffaf0,#fffdf8);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+}
+
+.luxury-prayer-item span,
+.prayer-item span{
+  display:block;
+  color:#25332f;
+  font-weight:1000;
+  margin-bottom:8px;
+}
+
+.luxury-prayer-item strong,
+.prayer-item strong{
+  display:block;
+  color:var(--luxury-emerald);
+  font-size:31px;
+  font-weight:1000;
+}
+
+.luxury-quran-callout{
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  background:
+    radial-gradient(circle at 86% 10%,rgba(244,199,101,.22),transparent 30%),
+    linear-gradient(135deg,#fffaf0,#ffffff);
+}
+
+.luxury-quran-callout h2{
+  font-size:clamp(36px,5vw,58px);
+  margin:14px 0 8px;
+  font-weight:1000;
+}
+
+.luxury-quran-callout p{
+  color:var(--luxury-muted);
+  font-weight:850;
+  margin:0;
+}
+
+.luxury-quick-links,
+.quick-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.luxury-quick-links a,
+.quick-links a{
+  min-height:152px;
+  border:1px solid rgba(199,138,23,.30);
+  border-radius:28px;
+  padding:24px;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(244,199,101,.20),transparent 30%),
+    linear-gradient(180deg,#fffaf0,#ffffff);
+  text-decoration:none;
+  color:var(--luxury-emerald);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+  transition:.18s ease;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.75);
+}
+
+.luxury-quick-links a:hover,
+.quick-links a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 48px rgba(6,63,54,.14);
+}
+
+.luxury-quick-links i{
+  font-style:normal;
+  width:38px;
+  height:38px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  color:#2a1a00;
+  background:linear-gradient(135deg,#f6cf70,#c78917);
+  box-shadow:0 10px 22px rgba(199,138,23,.22);
+}
+
+.luxury-quick-links strong,
+.quick-links strong{
+  font-size:31px;
+  line-height:1.15;
+  font-weight:1000;
+}
+
+.luxury-quick-links span,
+.quick-links span{
+  color:var(--luxury-muted);
+  font-weight:850;
+}
+
+.adhkar-luxury-page{
+  gap:28px;
+}
+
+.adhkar-tabs-luxury{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.adhkar-tabs-luxury button{
+  min-height:52px;
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid rgba(244,199,101,.38);
+  background:rgba(255,255,255,.14);
+  color:white;
+  font-family:inherit;
+  font-weight:1000;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+}
+
+.adhkar-tabs-luxury button.active{
+  color:#2b1a00;
+  background:linear-gradient(135deg,#f6cf70,#c78917);
+  box-shadow:0 16px 36px rgba(199,138,23,.24);
+}
+
+.adhkar-grid-luxury{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.adhkar-card-luxury{
+  padding:28px;
+  border-radius:34px;
+  border:1px solid rgba(199,138,23,.32);
+  background:
+    radial-gradient(circle at 88% 0,rgba(244,199,101,.18),transparent 36%),
+    linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,250,240,.96));
+  box-shadow:0 22px 60px rgba(6,63,54,.10);
+  position:relative;
+  overflow:hidden;
+}
+
+.adhkar-card-luxury::before{
+  content:"";
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(15,138,120,.10),transparent 68%);
+  left:-60px;
+  top:-60px;
+}
+
+.adhkar-card-luxury__top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  position:relative;
+}
+
+.adhkar-card-luxury h3{
+  margin:14px 0 0;
+  color:var(--luxury-emerald);
+  font-size:30px;
+  line-height:1.28;
+  font-weight:1000;
+}
+
+.adhkar-card-luxury__top > strong{
+  min-width:54px;
+  height:44px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  color:#2b1a00;
+  background:linear-gradient(135deg,#f6cf70,#c78917);
+  box-shadow:0 12px 26px rgba(199,138,23,.22);
+}
+
+.adhkar-text-luxury{
+  margin:20px 0;
+  color:#20302d;
+  font-size:20px;
+  line-height:2.25;
+  font-weight:760;
+  white-space:pre-line;
+}
+
+.luxury-progress{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin:16px 0;
+}
+
+.luxury-progress span{
+  color:var(--luxury-emerald);
+  font-weight:1000;
+  min-width:72px;
+}
+
+.luxury-progress div{
+  height:12px;
+  flex:1;
+  background:#e6efe9;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.luxury-progress i{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--luxury-gold),var(--luxury-emerald-3));
+}
+
+.luxury-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.md-footer,
+.luxury-footer{
+  padding:28px;
+  text-align:center;
+  color:var(--luxury-muted);
+  font-weight:900;
+}
+
+.md-mobile-menu{
+  position:fixed;
+  z-index:100;
+  top:22px;
+  left:22px;
+  right:22px;
+  padding:20px;
+  border-radius:28px;
+  border:1px solid rgba(199,138,23,.34);
+  background:rgba(255,252,244,.96);
+  box-shadow:0 30px 90px rgba(6,63,54,.20);
+  backdrop-filter:blur(18px);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.md-mobile-menu a{
+  text-decoration:none;
+  color:var(--luxury-emerald);
+  background:#f4fbf7;
+  border-radius:18px;
+  padding:14px 16px;
+  font-weight:1000;
+}
+
+.md-mobile-menu__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.md-mobile-menu__head button{
+  width:40px;
+  height:40px;
+  border-radius:14px;
+  border:0;
+  background:#fff0ee;
+  color:var(--luxury-danger);
+  font-size:24px;
+  font-weight:1000;
+}
+
+.md-menu-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:99;
+  background:rgba(6,63,54,.22);
+  backdrop-filter:blur(6px);
+}
+
+@media(max-width:980px){
+  .md-nav--desktop{
+    display:none !important;
+  }
+
+  .luxury-menu-btn,
+  .md-menu-btn{
+    display:block;
+  }
+
+  .luxury-brand-text small{
+    display:none;
+  }
+
+  .luxury-logo-wrap{
+    width:62px;
+    height:62px;
+  }
+
+  .luxury-hero,
+  .luxury-quran-callout,
+  .luxury-card-head,
+  .md-section-row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .luxury-prayer-grid,
+  .prayer-grid,
+  .luxury-quick-links,
+  .quick-links,
+  .adhkar-grid-luxury{
+    grid-template-columns:1fr;
+  }
+
+  .luxury-hero{
+    border-radius:30px;
+    padding:26px;
+  }
+
+  .md-card,
+  .luxury-card,
+  .adhkar-card-luxury{
+    border-radius:28px;
+    padding:24px;
+  }
+}
+
+@media(max-width:560px){
+  .md-container{
+    width:min(100% - 22px,1180px);
+  }
+
+  .luxury-header{
+    padding-top:16px;
+  }
+
+  .luxury-brand-text strong{
+    font-size:20px;
+  }
+
+  .luxury-logo-wrap{
+    width:56px;
+    height:56px;
+    border-radius:20px;
+  }
+
+  .luxury-logo-wrap img{
+    width:76px;
+    height:76px;
+  }
+
+  .luxury-hero h1{
+    font-size:38px;
+  }
+
+  .luxury-card-head h2,
+  .md-section-row h2{
+    font-size:34px;
+  }
+
+  .adhkar-card-luxury h3{
+    font-size:25px;
+  }
+
+  .adhkar-text-luxury{
+    font-size:18px;
+  }
+}
+
+
+
+/* Stronger color pass + public logo refinement */
+:root{
+  --luxury-ink:#07111f;
+  --luxury-muted:#44546a;
+  --luxury-emerald:#032f29;
+  --luxury-emerald-2:#056b5b;
+  --luxury-emerald-3:#00a78f;
+  --luxury-gold:#b77905;
+  --luxury-gold-2:#ffd36a;
+  --luxury-cream:#fff5db;
+  --luxury-card:#fffaf0;
+  --luxury-line:#ddb568;
+  --luxury-shadow:0 28px 80px rgba(3,47,41,.20);
+}
+
+body{
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255,211,106,.42), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(0,167,143,.26), transparent 30%),
+    radial-gradient(circle at 42% 100%, rgba(183,121,5,.22), transparent 36%),
+    linear-gradient(135deg,#fff3d1 0%,#f8fff6 42%,#dff7f1 100%) !important;
+}
+
+.luxury-header{
+  background:linear-gradient(180deg,rgba(255,249,236,.62),rgba(255,249,236,0));
+}
+
+.luxury-logo-wrap{
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,211,106,.40), transparent 26%),
+    linear-gradient(145deg,#032f29,#056b5b 65%,#9b6809) !important;
+  box-shadow:
+    0 22px 48px rgba(3,47,41,.34),
+    0 0 0 1px rgba(255,211,106,.38),
+    inset 0 0 0 1px rgba(255,255,255,.20) !important;
+}
+
+.luxury-logo-wrap img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+}
+
+.luxury-hero{
+  background:
+    radial-gradient(circle at 15% 22%,rgba(255,211,106,.46),transparent 23%),
+    radial-gradient(circle at 88% 10%,rgba(0,167,143,.42),transparent 32%),
+    linear-gradient(135deg,#032f29 0%,#056b5b 54%,#11213a 100%) !important;
+  border-color:rgba(255,211,106,.56) !important;
+}
+
+.md-card,
+.luxury-card,
+.adhkar-card-luxury{
+  background:
+    radial-gradient(circle at 88% 0,rgba(255,211,106,.18),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,245,219,.94)) !important;
+  border-color:rgba(183,121,5,.34) !important;
+}
+
+.luxury-nav a,
+.md-nav a{
+  border-color:rgba(183,121,5,.32) !important;
+  background:rgba(255,255,255,.84) !important;
+  color:#033d34 !important;
+}
+
+.luxury-nav a.router-link-active,
+.md-nav a.router-link-active{
+  background:linear-gradient(135deg,#032f29,#056b5b,#00a78f) !important;
+  color:#fff !important;
+}
+
+.luxury-chip{
+  background:linear-gradient(135deg,#fff8e8,#ecfff8) !important;
+  border-color:rgba(183,121,5,.36) !important;
+  color:#033d34 !important;
+}
+
+.luxury-btn--gold,
+.md-btn--gold{
+  background:linear-gradient(135deg,#ffd36a,#b77905) !important;
+  box-shadow:0 20px 44px rgba(183,121,5,.30) !important;
+}
+
+.luxury-btn--emerald,
+.luxury-btn--primary,
+.md-btn--primary{
+  background:linear-gradient(135deg,#032f29,#056b5b,#00a78f) !important;
+}
+
+.luxury-prayer-item strong,
+.prayer-item strong,
+.adhkar-card-luxury h3{
+  color:#033d34 !important;
+}
+
+.luxury-prayer-item,
+.prayer-item,
+.luxury-quick-links a,
+.quick-links a{
+  border-color:rgba(183,121,5,.34) !important;
+  background:
+    radial-gradient(circle at 20% 0,rgba(255,211,106,.24),transparent 36%),
+    linear-gradient(180deg,#fff8e8,#ffffff) !important;
+}
+
+/* Remove any remaining offline wording containers if older classes exist */
+.offline,
+.offline-text,
+.offline-message,
+.saved-version,
+.last-saved,
+.cache-note{
+  display:none !important;
+}
+
+
+/* Patch: internal premium logo, no reliance on public/logo */
+.luxury-logo-wrap img,
+.md-brand img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+  display:block;
+}
+
+.luxury-logo-wrap{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,211,106,.40), transparent 26%),
+    linear-gradient(145deg,#032f29,#056b5b 65%,#9b6809) !important;
+}
+
+/* keep the exact visual theme; only fix logo and unauthorized hadith issue */
+
+
+/* Final repair patch: no broken favicon text, restored cards, logo visible */
+.luxury-logo-wrap img,
+.md-brand img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+  display:block;
+}
+
+.luxury-dashboard-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:26px;
+}
+
+.luxury-quran-callout,
+.luxury-quick-card,
+.luxury-prayer-card{
+  display:flex;
+}
+
+.luxury-quick-card,
+.luxury-prayer-card{
+  display:block;
+}
+
+.luxury-quran-callout{
+  align-items:center;
+  justify-content:space-between;
+}
+
+.md-alert:empty,
+.md-note:empty,
+.luxury-alert:empty,
+.luxury-note:empty{
+  display:none!important;
+}
+
+.adhkar-grid-luxury,
+.hadith-index,
+.md-hadith,
+.luxury-quick-links,
+.luxury-prayer-grid{
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+@media(max-width:980px){
+  .luxury-quran-callout{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+
+/* Faith motivational card */
+.luxury-faith-card{
+  min-height:240px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  background:
+    radial-gradient(circle at 18% 20%,rgba(255,211,106,.28),transparent 28%),
+    radial-gradient(circle at 86% 76%,rgba(0,167,143,.22),transparent 32%),
+    linear-gradient(135deg,#fffaf0,#ffffff) !important;
+}
+
+.luxury-faith-orb{
+  width:128px;
+  height:128px;
+  flex:0 0 128px;
+  border-radius:44px;
+  display:grid;
+  place-items:center;
+  color:#fff8d9;
+  font-size:42px;
+  background:
+    radial-gradient(circle at 34% 24%,rgba(255,255,255,.38),transparent 24%),
+    linear-gradient(145deg,#032f29,#056b5b 62%,#b77905);
+  box-shadow:0 26px 60px rgba(3,47,41,.22), inset 0 0 0 1px rgba(255,211,106,.42);
+}
+
+.luxury-faith-content{
+  flex:1;
+}
+
+.luxury-faith-content h2{
+  margin:16px 0 12px;
+  color:var(--luxury-ink);
+  font-size:clamp(32px,4.5vw,54px);
+  line-height:1.16;
+  font-weight:1000;
+}
+
+.luxury-faith-content p{
+  margin:0 0 22px;
+  color:#304238;
+  font-size:20px;
+  line-height:2;
+  font-weight:850;
+  max-width:820px;
+}
+
+.luxury-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+@media(max-width:860px){
+  .luxury-faith-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .luxury-faith-orb{
+    width:88px;
+    height:88px;
+    flex-basis:88px;
+    border-radius:30px;
+    font-size:30px;
+  }
+}
+
+
+/* Polished copy + motion layer */
+:root{
+  --motion-fast:180ms;
+  --motion-soft:520ms;
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes md-rise-in{
+  from{
+    opacity:0;
+    transform:translateY(18px) scale(.985);
+    filter:blur(4px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes md-soft-glow{
+  0%,100%{ box-shadow:0 28px 80px rgba(3,47,41,.16); }
+  50%{ box-shadow:0 34px 96px rgba(3,47,41,.22); }
+}
+
+@keyframes md-orb-float{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-8px) rotate(2deg); }
+}
+
+@keyframes md-gold-sweep{
+  0%{ transform:translateX(120%) rotate(18deg); opacity:0; }
+  24%{ opacity:.55; }
+  52%{ opacity:.22; }
+  100%{ transform:translateX(-120%) rotate(18deg); opacity:0; }
+}
+
+.luxury-main > *,
+.md-page > *,
+.dashboard-page > *,
+.luxury-page > *{
+  animation:md-rise-in .62s var(--ease-out) both;
+}
+
+.luxury-main > *:nth-child(2),
+.md-page > *:nth-child(2),
+.dashboard-page > *:nth-child(2),
+.luxury-page > *:nth-child(2){
+  animation-delay:.08s;
+}
+
+.luxury-main > *:nth-child(3),
+.md-page > *:nth-child(3),
+.dashboard-page > *:nth-child(3),
+.luxury-page > *:nth-child(3){
+  animation-delay:.14s;
+}
+
+.luxury-main > *:nth-child(4),
+.md-page > *:nth-child(4),
+.dashboard-page > *:nth-child(4),
+.luxury-page > *:nth-child(4){
+  animation-delay:.20s;
+}
+
+.luxury-hero,
+.md-card,
+.luxury-card,
+.adhkar-card-luxury{
+  transition:
+    transform var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out);
+}
+
+.luxury-hero:hover,
+.md-card:hover,
+.luxury-card:hover,
+.adhkar-card-luxury:hover{
+  transform:translateY(-3px);
+  box-shadow:0 34px 92px rgba(3,47,41,.19);
+}
+
+.luxury-hero{
+  animation:md-rise-in .72s var(--ease-out) both, md-soft-glow 5.5s ease-in-out infinite;
+}
+
+.luxury-hero::after{
+  content:"";
+  position:absolute;
+  top:-45%;
+  bottom:-45%;
+  width:110px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  animation:md-gold-sweep 7s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.luxury-logo-wrap{
+  animation:md-orb-float 5.8s ease-in-out infinite;
+  transition:transform var(--motion-fast) var(--ease-out), box-shadow var(--motion-fast) var(--ease-out);
+}
+
+.luxury-brand:hover .luxury-logo-wrap{
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 24px 54px rgba(3,47,41,.32), inset 0 0 0 1px rgba(255,211,106,.55) !important;
+}
+
+.luxury-nav a,
+.md-nav a,
+.luxury-btn,
+.md-btn,
+.adhkar-tabs-luxury button,
+.hadith-buttons button{
+  transition:
+    transform var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out),
+    background var(--motion-fast) var(--ease-out),
+    color var(--motion-fast) var(--ease-out);
+}
+
+.luxury-nav a:hover,
+.md-nav a:hover,
+.luxury-btn:hover,
+.md-btn:hover,
+.adhkar-tabs-luxury button:hover,
+.hadith-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+.luxury-nav a:active,
+.md-nav a:active,
+.luxury-btn:active,
+.md-btn:active,
+.adhkar-tabs-luxury button:active,
+.hadith-buttons button:active{
+  transform:translateY(0) scale(.98);
+}
+
+.luxury-prayer-item,
+.prayer-item,
+.luxury-quick-links a,
+.quick-links a{
+  position:relative;
+  overflow:hidden;
+  transition:transform var(--motion-fast) var(--ease-out), box-shadow var(--motion-fast) var(--ease-out);
+}
+
+.luxury-prayer-item::before,
+.prayer-item::before,
+.luxury-quick-links a::before,
+.quick-links a::before,
+.adhkar-card-luxury::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(255,211,106,.22), transparent 36%);
+  opacity:0;
+  transition:opacity var(--motion-fast) var(--ease-out);
+  pointer-events:none;
+}
+
+.luxury-prayer-item:hover::before,
+.prayer-item:hover::before,
+.luxury-quick-links a:hover::before,
+.quick-links a:hover::before,
+.adhkar-card-luxury:hover::after{
+  opacity:1;
+}
+
+.luxury-prayer-item:hover,
+.prayer-item:hover,
+.luxury-quick-links a:hover,
+.quick-links a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 22px 46px rgba(3,47,41,.13);
+}
+
+.luxury-faith-orb{
+  animation:md-orb-float 4.8s ease-in-out infinite;
+}
+
+.luxury-progress i{
+  transition:width .32s var(--ease-out);
+}
+
+.adhkar-text-luxury,
+.md-hadith-text,
+.luxury-faith-content p{
+  letter-spacing:.01em;
+}
+
+.md-footer,
+.luxury-footer{
+  animation:md-rise-in .7s var(--ease-out) both;
+  animation-delay:.24s;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+
+/* Performance + Gold Theme Patch */
+:root{
+  --luxury-card:#fff1cc;
+  --luxury-cream:#ffe9aa;
+  --luxury-gold:#b97905;
+  --luxury-gold-2:#ffd66d;
+  --luxury-gold-3:#f3b83f;
+  --luxury-emerald:#063f36;
+  --luxury-emerald-2:#0a6a5a;
+  --luxury-shadow:0 14px 34px rgba(80,50,0,.12);
+}
+
+/* أسرع: تقليل blur والأنيميشن الثقيلة */
+*{
+  scroll-behavior:auto;
+}
+
+body{
+  background:
+    radial-gradient(circle at 14% 8%, rgba(255,214,109,.42), transparent 24%),
+    radial-gradient(circle at 88% 12%, rgba(10,106,90,.20), transparent 28%),
+    linear-gradient(135deg,#ffefc2 0%,#fff7df 42%,#e5fbf4 100%) !important;
+}
+
+body::before{
+  opacity:.10 !important;
+}
+
+.luxury-bg-orb,
+.luxury-hero::after,
+.luxury-logo-wrap::after{
+  display:none !important;
+}
+
+.luxury-main > *,
+.md-page > *,
+.dashboard-page > *,
+.luxury-page > *{
+  animation:md-fast-in .22s ease-out both !important;
+}
+
+@keyframes md-fast-in{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.luxury-hero{
+  animation:md-fast-in .24s ease-out both !important;
+}
+
+.luxury-logo-wrap,
+.luxury-faith-orb{
+  animation:none !important;
+}
+
+.md-card,
+.luxury-card,
+.adhkar-card-luxury{
+  background:
+    radial-gradient(circle at 85% 0,rgba(255,214,109,.28),transparent 34%),
+    linear-gradient(180deg,#fff2c9,#fff8e8) !important;
+  box-shadow:var(--luxury-shadow) !important;
+  border-color:rgba(185,121,5,.36) !important;
+}
+
+.luxury-hero{
+  background:
+    radial-gradient(circle at 14% 20%,rgba(255,214,109,.38),transparent 23%),
+    linear-gradient(135deg,#063f36 0%,#0a6a5a 58%,#875805 100%) !important;
+  box-shadow:0 18px 42px rgba(6,63,54,.18) !important;
+}
+
+.luxury-quran-callout,
+.luxury-faith-card,
+.luxury-good-deeds-card{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(255,214,109,.34),transparent 32%),
+    linear-gradient(135deg,#ffe9aa,#fff5d6) !important;
+}
+
+.luxury-prayer-item,
+.prayer-item,
+.luxury-quick-links a,
+.quick-links a,
+.good-deeds-list a,
+.good-deeds-list button{
+  background:
+    radial-gradient(circle at 15% 0,rgba(255,214,109,.30),transparent 34%),
+    linear-gradient(180deg,#ffe9aa,#fff5d6) !important;
+  box-shadow:none !important;
+  border:1px solid rgba(185,121,5,.34) !important;
+}
+
+.luxury-quick-links i,
+.quick-links i,
+[class*="eye"],
+.eye,
+.eye-icon,
+.icon-eye,
+[data-icon="eye"]{
+  display:none !important;
+}
+
+.luxury-prayer-item:hover,
+.prayer-item:hover,
+.luxury-quick-links a:hover,
+.quick-links a:hover,
+.md-card:hover,
+.luxury-card:hover,
+.adhkar-card-luxury:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 16px 36px rgba(80,50,0,.13) !important;
+}
+
+.luxury-nav a,
+.md-nav a{
+  background:linear-gradient(180deg,#fff4d2,#ffe9aa) !important;
+  border-color:rgba(185,121,5,.36) !important;
+}
+
+.luxury-nav a.router-link-active,
+.md-nav a.router-link-active{
+  background:linear-gradient(135deg,#063f36,#0a6a5a) !important;
+  color:#fff !important;
+}
+
+.luxury-chip{
+  background:linear-gradient(135deg,#fff7df,#ffe6a1) !important;
+  border-color:rgba(185,121,5,.38) !important;
+}
+
+.luxury-btn--gold,
+.md-btn--gold{
+  background:linear-gradient(135deg,#ffd66d,#b97905) !important;
+  box-shadow:0 10px 22px rgba(185,121,5,.18) !important;
+}
+
+.luxury-btn--ghost,
+.md-btn--soft{
+  background:#fff0bf !important;
+  border:1px solid rgba(185,121,5,.26) !important;
+}
+
+/* كارد التوبة والاستغفار والصدقة */
+.luxury-good-deeds-card{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:24px;
+  align-items:center;
+  min-height:230px;
+}
+
+.luxury-good-deeds-card h2{
+  margin:14px 0 12px;
+  color:var(--luxury-ink);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:1000;
+  line-height:1.18;
+}
+
+.luxury-good-deeds-card p{
+  margin:0;
+  color:#3b3424;
+  line-height:2;
+  font-size:19px;
+  font-weight:850;
+}
+
+.good-deeds-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.good-deeds-list a,
+.good-deeds-list button{
+  min-height:128px;
+  border-radius:24px;
+  padding:20px;
+  color:#063f36;
+  text-decoration:none;
+  font-family:inherit;
+  cursor:pointer;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+
+.good-deeds-list strong{
+  font-size:25px;
+  font-weight:1000;
+}
+
+.good-deeds-list span{
+  color:#5c4a24;
+  font-weight:850;
+  line-height:1.6;
+}
+
+.good-deeds-list a:hover,
+.good-deeds-list button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(80,50,0,.12) !important;
+}
+
+/* نصوص أدق وأخف بصريًا */
+.luxury-faith-content p,
+.adhkar-text-luxury,
+.md-hadith-text{
+  color:#243a33 !important;
+}
+
+@media(max-width:900px){
+  .luxury-good-deeds-card{
+    grid-template-columns:1fr;
+  }
+
+  .good-deeds-list{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* Final small repair: hadith stable + mobile nav positioning + gold/emerald alternating cards */
+@media(max-width:980px){
+  .md-header__inner{
+    flex-direction:row-reverse;
+    justify-content:space-between;
+  }
+
+  .luxury-brand{
+    margin-inline-start:auto;
+  }
+
+  .luxury-menu-btn,
+  .md-menu-btn{
+    margin-inline-end:10px;
+  }
+
+  .md-mobile-menu{
+    left:auto !important;
+    right:18px !important;
+    width:min(360px, calc(100vw - 36px));
+  }
+}
+
+@media(max-width:560px){
+  .md-mobile-menu{
+    right:12px !important;
+    width:min(330px, calc(100vw - 24px));
+  }
+}
+
+
+
+/* Dashboard-only card color alternation */
+.dashboard-page .luxury-prayer-item:nth-child(odd),
+.dashboard-page .luxury-quick-links a:nth-child(odd),
+.dashboard-page .good-deeds-list a:nth-child(odd),
+.dashboard-page .good-deeds-list button:nth-child(odd){
+  background:linear-gradient(180deg,#ffe9aa,#fff1c7) !important;
+}
+
+.dashboard-page .luxury-prayer-item:nth-child(even),
+.dashboard-page .luxury-quick-links a:nth-child(even),
+.dashboard-page .good-deeds-list a:nth-child(even),
+.dashboard-page .good-deeds-list button:nth-child(even){
+  background:linear-gradient(180deg,#e4f7ee,#cdeee3) !important;
+}
+
+/* Keep other pages clean as before */
+.md-page:not(.dashboard-page) .md-hadith,
+.md-page:not(.dashboard-page) .md-explain,
+.adhkar-luxury-page .adhkar-card-luxury{
+  background:
+    radial-gradient(circle at 85% 0,rgba(255,214,109,.20),transparent 34%),
+    linear-gradient(180deg,#fff2c9,#fff8e8) !important;
+}
+
+.md-page:not(.dashboard-page) .md-explain{
+  background:linear-gradient(180deg,#e9f8ef,#d8f2e6) !important;
+}
+
+
+/* Hadith fully offline: faster buttons, no waiting feel */
+.md-actions .md-btn,
+.md-hadith-nav .md-btn{
+  will-change:transform;
+}
+
+.md-actions{
+  contain:layout style;
+}
+
+.md-hadith{
+  min-height:260px;
+}
+
+
+/* Instant hadith buttons */
+.md-actions .md-btn,
+.md-hadith-nav .md-btn,
+.hadith-buttons button{
+  touch-action:manipulation;
+  user-select:none;
+  cursor:pointer;
+}
+
+.md-actions .md-btn:active,
+.md-hadith-nav .md-btn:active,
+.hadith-buttons button:active{
+  transform:scale(.97) !important;
+}
+
+.md-btn.is-done{
+  background:linear-gradient(135deg,#0a6a5a,#063f36) !important;
+  color:#fff !important;
+}
+
+
+/* Remove remaining auth/login message boxes after no-login mode */
+.luxury-alert:empty,
+.md-alert:empty,
+.auth-alert:empty,
+.error-message:empty,
+.quran-error:empty{
+  display:none !important;
+}
+
+.no-auth-message,
+.login-required,
+.require-login{
+  display:none !important;
+}
+
+
+/* Quran instant local buttons */
+.quran-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.quran-task{
+  border:1px solid rgba(185,121,5,.32);
+  border-radius:24px;
+  padding:22px;
+  background:linear-gradient(180deg,#fff2c9,#fff8e8);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:210px;
+}
+
+.quran-task:nth-child(odd){
+  background:linear-gradient(180deg,#ffe9aa,#fff1c7);
+}
+
+.quran-task:nth-child(even){
+  background:linear-gradient(180deg,#e4f7ee,#cdeee3);
+}
+
+.quran-task span{
+  color:#6b6f66;
+  font-weight:900;
+}
+
+.quran-task strong{
+  color:#063f36;
+  font-size:34px;
+  font-weight:1000;
+}
+
+.quran-task small{
+  color:#55635e;
+  font-weight:800;
+  margin-bottom:auto;
+}
+
+.quran-task .md-btn,
+.quran-form-actions .md-btn{
+  touch-action:manipulation;
+  user-select:none;
+  cursor:pointer;
+}
+
+.quran-task .md-btn:active,
+.quran-form-actions .md-btn:active{
+  transform:scale(.97) !important;
+}
+
+.quran-task .md-btn.is-done{
+  background:linear-gradient(135deg,#0a6a5a,#063f36) !important;
+  color:#fff !important;
+}
+
+.quran-form{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.quran-form label{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  color:#53615b;
+  font-weight:900;
+}
+
+.quran-form input{
+  min-height:54px;
+  border-radius:18px;
+  border:1px solid rgba(6,63,54,.16);
+  padding:10px 16px;
+  font:inherit;
+  font-weight:900;
+  color:#07111f;
+  background:#fff8e8;
+}
+
+.quran-form-actions{
+  grid-column:1 / -1;
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+
+@media(max-width:880px){
+  .quran-cards,
+  .quran-form{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* Center mobile menu */
+@media(max-width:980px){
+  .md-mobile-menu,
+  .luxury-mobile-menu{
+    left:50% !important;
+    right:auto !important;
+    top:50% !important;
+    transform:translate(-50%, -50%) !important;
+    width:min(390px, calc(100vw - 34px)) !important;
+    max-height:calc(100vh - 34px);
+    overflow:auto;
+    margin:0 !important;
+  }
+
+  .md-pop-enter-from,
+  .md-pop-leave-to{
+    opacity:0;
+    transform:translate(-50%, -46%) scale(.96) !important;
+  }
+
+  .md-pop-enter-to,
+  .md-pop-leave-from{
+    opacity:1;
+    transform:translate(-50%, -50%) scale(1) !important;
+  }
+}
+
+@media(max-width:560px){
+  .md-mobile-menu,
+  .luxury-mobile-menu{
+    width:min(360px, calc(100vw - 22px)) !important;
+  }
+}
+
+
+/* 20 motivational messages + 20 deed ideas cards */
+.motivation-card,
+.deeds-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.motivation-card::before,
+.deeds-card::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border-radius:30px;
+  border:1px solid rgba(185,121,5,.18);
+  pointer-events:none;
+}
+
+.motivation-card .luxury-faith-content h2,
+.deeds-card h2{
+  font-size:clamp(36px,5vw,64px);
+  line-height:1.12;
+}
+
+.motivation-card .luxury-faith-content p,
+.deeds-card__content > p{
+  font-size:21px;
+  line-height:2;
+  color:#3b3424;
+  font-weight:850;
+}
+
+.deeds-card{
+  grid-template-columns:1.15fr .85fr;
+}
+
+.deeds-card__content{
+  position:relative;
+  z-index:1;
+}
+
+.deed-highlight{
+  margin:22px 0;
+  padding:22px;
+  border-radius:26px;
+  background:linear-gradient(180deg,#e4f7ee,#cdeee3);
+  border:1px solid rgba(6,63,54,.16);
+}
+
+.deed-highlight span{
+  display:inline-flex;
+  padding:7px 14px;
+  border-radius:999px;
+  background:#fff1c7;
+  color:#063f36;
+  font-weight:1000;
+  border:1px solid rgba(185,121,5,.24);
+}
+
+.deed-highlight strong{
+  display:block;
+  margin:14px 0 8px;
+  font-size:28px;
+  line-height:1.4;
+  color:#063f36;
+  font-weight:1000;
+}
+
+.deed-highlight p{
+  margin:0;
+  color:#3b3424;
+  font-size:18px;
+  line-height:1.9;
+  font-weight:850;
+}
+
+.good-deeds-list button{
+  border:0;
+}
+
+.good-deeds-list button:nth-child(1){
+  background:linear-gradient(180deg,#ffe9aa,#fff1c7) !important;
+}
+
+.good-deeds-list button:nth-child(2){
+  background:linear-gradient(180deg,#e4f7ee,#cdeee3) !important;
+}
+
+.good-deeds-list button:nth-child(3){
+  background:linear-gradient(180deg,#ffe9aa,#fff1c7) !important;
+}
+
+@media(max-width:900px){
+  .deeds-card{
+    grid-template-columns:1fr;
+  }
+
+  .motivation-card .luxury-faith-content h2,
+  .deeds-card h2{
+    font-size:38px;
+  }
+}

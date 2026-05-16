@@ -1,0 +1,27 @@
+/* Logout button styles */
+.md-nav-logout,
+.md-mobile-logout{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 16px;
+  border-radius:999px;
+  background:#fff0ef;
+  border:1px solid #ffd0cc;
+  color:#b42318;
+  font-weight:900;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.md-nav-logout:hover,
+.md-mobile-logout:hover{
+  background:#b42318;
+  color:white;
+}
+
+.md-mobile-logout{
+  border-radius:16px;
+  width:100%;
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script>
+(function(){
+  var GAZA_TIMES={"2026-05-10":{"Fajr":"04:10","Sunrise":"05:50","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:31","Isha":"20:56"},"2026-05-11":{"Fajr":"04:09","Sunrise":"05:49","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:32","Isha":"20:57"},"2026-04-19":{"Fajr":"04:35","Sunrise":"06:09","Dhuhr":"12:41","Asr":"16:19","Maghrib":"19:16","Isha":"20:37"},"2026-04-20":{"Fajr":"04:34","Sunrise":"06:08","Dhuhr":"12:41","Asr":"16:19","Maghrib":"19:17","Isha":"20:38"},"2026-04-21":{"Fajr":"04:33","Sunrise":"06:07","Dhuhr":"12:41","Asr":"16:19","Maghrib":"19:18","Isha":"20:39"},"2026-04-22":{"Fajr":"04:31","Sunrise":"06:06","Dhuhr":"12:41","Asr":"16:19","Maghrib":"19:18","Isha":"20:40"},"2026-04-23":{"Fajr":"04:30","Sunrise":"06:05","Dhuhr":"12:41","Asr":"16:19","Maghrib":"19:19","Isha":"20:41"},"2026-04-24":{"Fajr":"04:29","Sunrise":"06:04","Dhuhr":"12:40","Asr":"16:18","Maghrib":"19:20","Isha":"20:41"},"2026-04-25":{"Fajr":"04:28","Sunrise":"06:03","Dhuhr":"12:40","Asr":"16:18","Maghrib":"19:21","Isha":"20:42"},"2026-04-26":{"Fajr":"04:26","Sunrise":"06:02","Dhuhr":"12:40","Asr":"16:18","Maghrib":"19:21","Isha":"20:43"},"2026-04-27":{"Fajr":"04:25","Sunrise":"06:01","Dhuhr":"12:40","Asr":"16:18","Maghrib":"19:22","Isha":"20:45"},"2026-04-28":{"Fajr":"04:24","Sunrise":"06:00","Dhuhr":"12:40","Asr":"16:18","Maghrib":"19:23","Isha":"20:45"},"2026-04-29":{"Fajr":"04:23","Sunrise":"05:59","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:24","Isha":"20:46"},"2026-04-30":{"Fajr":"04:21","Sunrise":"05:58","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:24","Isha":"20:47"},"2026-05-01":{"Fajr":"04:20","Sunrise":"05:57","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:25","Isha":"20:48"},"2026-05-02":{"Fajr":"04:19","Sunrise":"05:56","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:26","Isha":"20:49"},"2026-05-03":{"Fajr":"04:18","Sunrise":"05:55","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:26","Isha":"20:50"},"2026-05-04":{"Fajr":"04:17","Sunrise":"05:55","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:27","Isha":"20:51"},"2026-05-05":{"Fajr":"04:15","Sunrise":"05:54","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:28","Isha":"20:52"},"2026-05-06":{"Fajr":"04:14","Sunrise":"05:53","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:28","Isha":"20:53"},"2026-05-07":{"Fajr":"04:13","Sunrise":"05:52","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:29","Isha":"20:54"},"2026-05-08":{"Fajr":"04:12","Sunrise":"05:51","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:30","Isha":"20:55"},"2026-05-09":{"Fajr":"04:11","Sunrise":"05:51","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:30","Isha":"20:55"},"2026-05-12":{"Fajr":"04:08","Sunrise":"05:48","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:32","Isha":"20:59"},"2026-05-13":{"Fajr":"04:06","Sunrise":"05:47","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:33","Isha":"20:59"},"2026-05-14":{"Fajr":"04:05","Sunrise":"05:47","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:34","Isha":"21:00"},"2026-05-15":{"Fajr":"04:04","Sunrise":"05:46","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:34","Isha":"21:01"},"2026-05-16":{"Fajr":"04:03","Sunrise":"05:45","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:35","Isha":"21:02"},"2026-05-17":{"Fajr":"04:02","Sunrise":"05:45","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:36","Isha":"21:03"},"2026-05-18":{"Fajr":"04:01","Sunrise":"05:44","Dhuhr":"12:39","Asr":"16:18","Maghrib":"19:36","Isha":"21:04"}};
+  window.__MUSLIM_DAILY_GAZA_OFFICIAL_TIMES__=GAZA_TIMES;
+  function todayKey(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+  function cleanOldPrayerCache(){try{var remove=[];for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&(/muslimdaily_.*(prayer|selected_location|gps_location|ip_location|api_cache)/.test(k)||k.indexOf('muslimdaily_prayer_times')===0))remove.push(k);}remove.forEach(function(k){localStorage.removeItem(k);});}catch(e){}}
+  cleanOldPrayerCache();
+  try{if('caches' in window){caches.keys().then(function(keys){keys.forEach(function(k){if(String(k).indexOf('muslimdaily')!==-1)caches.delete(k);});});}}catch(e){}
+  try{if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){try{r.update();}catch(e){}});});}}catch(e){}
+  var originalFetch=window.fetch;
+  window.fetch=function(input,init){
+    try{
+      var url=typeof input==='string'?input:(input&&input.url)||'';
+      if(url.indexOf('/api/official-prayer-times.php')!==-1){
+        var u=new URL(url, window.location.href);
+        var lat=parseFloat(u.searchParams.get('lat')||'0');
+        var lng=parseFloat(u.searchParams.get('lng')||'0');
+        var date=u.searchParams.get('date')||todayKey();
+        if(Math.abs(lat-31.5017)<0.45 && Math.abs(lng-34.4668)<0.45 && GAZA_TIMES[date]){
+          var body={ok:true,source:'official_gaza_printed_calendar_client',city:'غزة',city_en:'Gaza',country:'فلسطين',countryCode:'PS',lat:lat,lng:lng,date:date,timings:GAZA_TIMES[date],prayers:GAZA_TIMES[date],prayer_times:GAZA_TIMES[date]};
+          return Promise.resolve(new Response(JSON.stringify(body),{status:200,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}}));
+        }
+      }
+    }catch(e){}
+    return originalFetch.apply(this, arguments);
+  };
+})();
+</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#063f36">
+  <link rel="icon" type="image/svg+xml" href="<%= BASE_URL %>favicon.svg">
+  <link rel="apple-touch-icon" href="<%= BASE_URL %>favicon.svg">
+  <title>Muslim Daily | رفيقك اليومي</title>
+</head>
+<body>
+  <noscript>تحتاج إلى تفعيل JavaScript لتشغيل Muslim Daily.</noscript>
+  <div id="app"></div>
+<script src="/js/muslimdaily-prayer-fallback.js?v=static-fallback-3" defer></script><script src="/js/prayer-times-simple-fix.js?v=simple-gps-gaza-v168"></script>
+</body>
+</html>

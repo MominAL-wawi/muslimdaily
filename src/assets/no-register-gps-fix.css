@@ -1,0 +1,17 @@
+/* Hide old banners and phone/register leftovers */
+.registration-info,.phone-info,.whatsapp-info,.offline-banner,.saved-offline-banner{display:none!important}
+.md-alert:empty,.md-note:empty{display:none!important}
+.failed-fetch,.offline-error,[data-error="failed-fetch"]{display:none!important}
+.adhkar-text,.md-hadith-text{overflow:visible!important;display:block!important;-webkit-line-clamp:unset!important;white-space:pre-line!important}
+.md-nav-logout,.md-mobile-logout{
+  min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 18px;border-radius:999px;border:1px solid rgba(180,35,24,.20);
+  background:linear-gradient(135deg,#fff7f6,#fff0ef);color:#b42318;font-family:inherit;font-weight:950;cursor:pointer
+}
+.md-nav-logout::before,.md-mobile-logout::before{content:"";width:9px;height:9px;border-radius:50%;background:#d92d20}
+.md-nav-logout:hover,.md-mobile-logout:hover{background:#b42318;color:#fff}
+.md-prayer-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:18px}
+.md-prayer{border:1px solid #f0ddbd;border-radius:22px;padding:18px;text-align:center;background:#fffaf0}
+.md-prayer span{display:block;color:#20302d;font-weight:800}
+.md-prayer strong{display:block;color:#0a4f43;font-size:28px;margin-top:6px}
+@media(max-width:900px){.md-prayer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

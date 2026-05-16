@@ -1,0 +1,27 @@
+{
+  "name": "muslimdaily-vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "core-js": "^3.37.1",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/eslint-parser": "^7.25.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^9.27.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

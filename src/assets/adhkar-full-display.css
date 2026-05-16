@@ -1,0 +1,76 @@
+/* Adhkar full display fix */
+
+.adhkar-page{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.adhkar-tabs{
+  margin:0 0 4px;
+}
+
+.adhkar-tabs button{
+  min-height:46px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid #d9ebe2;
+  background:#ecfdf5;
+  color:#0a4f43;
+  font-weight:950;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.adhkar-tabs button.active{
+  background:linear-gradient(135deg,#0a4f43,#0f766e);
+  color:white;
+  border-color:transparent;
+}
+
+.adhkar-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.adhkar-card{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:auto !important;
+}
+
+.adhkar-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+}
+
+.adhkar-card h3{
+  margin:10px 0 0;
+  color:#0a4f43;
+  font-size:24px;
+  line-height:1.35;
+  font-weight:1000;
+}
+
+.adhkar-text{
+  margin:0;
+  color:#243331;
+  font-size:18px;
+  line-height:2.25;
+  font-weight:750;
+  white-space:pre-line;
+}
+
+.adhkar-progress{
+  margin:0;
+}
+
+@media(max-width:900px){
+  .adhkar-list{
+    grid-template-columns:1fr;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "source": "static_web_file",
+  "city": "Gaza",
+  "country": "Palestine",
+  "timezone": "Asia/Gaza",
+  "note": "احتياط ثابت داخل الموقع يستخدم فقط عند فشل API وعدم وجود آخر مواقيت صحيحة محفوظة.",
+  "timings": {
+    "Fajr": "04:35",
+    "Dhuhr": "12:41",
+    "Asr": "16:19",
+    "Maghrib": "19:16",
+    "Isha": "20:37"
+  }
+}

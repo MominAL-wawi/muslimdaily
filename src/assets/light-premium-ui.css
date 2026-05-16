@@ -1,0 +1,333 @@
+
+/* Lightweight Premium UI Patch - faster, cleaner, less blur */
+:root{
+  --green:#064e3b;
+  --green2:#0f766e;
+  --gold:#b7790f;
+  --gold2:#f5d48a;
+  --ink:#101828;
+  --muted:#667085;
+  --paper:#fffdf7;
+  --line:#eadfca;
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:
+    radial-gradient(circle at 85% 8%, rgba(15,118,110,.14), transparent 24%),
+    radial-gradient(circle at 10% 18%, rgba(245,212,138,.22), transparent 24%),
+    linear-gradient(135deg,#fffdf7,#f6fff9 55%,#f3f8ff) !important;
+}
+
+body:before, body:after{
+  display:none !important;
+}
+
+.card{
+  border:1px solid rgba(183,121,15,.22) !important;
+  background:rgba(255,255,255,.92) !important;
+  box-shadow:0 12px 34px rgba(6,78,59,.075) !important;
+  border-radius:28px !important;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+  backdrop-filter:none !important;
+}
+
+.card:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 18px 42px rgba(6,78,59,.11) !important;
+}
+
+.card-title{
+  color:var(--ink);
+  font-weight:900;
+}
+
+.card-title:after{
+  width:56px !important;
+  height:3px !important;
+  background:linear-gradient(90deg,var(--gold),var(--green)) !important;
+}
+
+.btn{
+  border-radius:16px !important;
+  transition:transform .15s ease, box-shadow .15s ease !important;
+}
+
+.btn:hover{
+  transform:translateY(-1px) !important;
+  box-shadow:0 10px 24px rgba(6,78,59,.12) !important;
+}
+
+.btn:after{
+  display:none !important;
+}
+
+.btn.ghost,.ghost{
+  background:#f4faf6 !important;
+  color:var(--green) !important;
+  border:1px solid rgba(6,78,59,.10) !important;
+}
+
+.btn.danger-soft,.danger-soft{
+  background:#fff1f1 !important;
+  color:#9f1239 !important;
+  border:1px solid rgba(159,18,57,.14) !important;
+}
+
+.dashboard-pro{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding-bottom:30px;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
+
+.dashboard-grid > *{
+  grid-column:span 6;
+}
+
+.dashboard-grid > .task-list{
+  grid-column:span 7;
+}
+
+.dashboard-grid > .task-card{
+  grid-column:span 5;
+}
+
+.quick-hero{
+  border:1px solid rgba(183,121,15,.22);
+  border-radius:30px;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.95),rgba(246,255,249,.95));
+  box-shadow:0 12px 32px rgba(6,78,59,.075);
+}
+
+.quick-hero span{
+  display:inline-flex;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#fff8e7;
+  color:var(--green);
+  border:1px solid rgba(183,121,15,.18);
+  font-weight:800;
+}
+
+.quick-hero h1{
+  margin:10px 0 0;
+  color:var(--green);
+  font-size:clamp(30px,4vw,54px);
+}
+
+.today-strip{
+  border-radius:22px !important;
+  padding:12px 16px !important;
+  background:linear-gradient(135deg,#064e3b,#0f766e) !important;
+  box-shadow:0 12px 30px rgba(6,78,59,.14) !important;
+}
+
+.today-strip-glow{
+  display:none !important;
+}
+
+.today-strip-content{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.today-strip strong{
+  font-size:18px !important;
+}
+
+.today-strip small{
+  opacity:.85;
+}
+
+.motivation-pro,.faith-card-pro{
+  position:relative;
+  overflow:hidden;
+  min-height:auto !important;
+}
+
+.motivation-pro:before,.faith-card-pro:before{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  left:-70px;
+  top:-70px;
+  background:radial-gradient(circle, rgba(245,212,138,.28), transparent 70%);
+}
+
+.motivation-head,.faith-head{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.mini-label{
+  display:inline-flex;
+  padding:6px 11px;
+  border-radius:999px;
+  background:#fff8e7;
+  color:var(--green);
+  border:1px solid rgba(183,121,15,.18);
+  font-size:13px;
+  font-weight:900;
+}
+
+.motivation-pro h2,.faith-card-pro h2{
+  margin:12px 0 0;
+  color:var(--ink);
+  font-size:30px;
+}
+
+.main-message,.faith-card-pro p{
+  position:relative;
+  z-index:1;
+  color:var(--green);
+  font-weight:900;
+  line-height:2;
+  font-size:20px;
+  margin:18px 0 8px;
+}
+
+.motivation-pro small,.faith-note{
+  color:var(--muted);
+  font-weight:800;
+}
+
+.motivation-actions,.faith-actions{
+  position:relative;
+  z-index:1;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.faith-icon{
+  width:54px;
+  height:54px;
+  margin:22px 0 8px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  color:white;
+  background:linear-gradient(135deg,var(--gold),var(--green));
+  box-shadow:0 12px 24px rgba(6,78,59,.16);
+  animation:softLift 2.6s ease-in-out infinite;
+}
+
+.faith-card-pro h3{
+  margin:8px 0;
+  color:var(--ink);
+  font-size:24px;
+}
+
+.faith-glow{
+  display:none;
+}
+
+@keyframes softLift{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+
+.tasks-stack{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.task-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border:1px solid rgba(6,78,59,.08);
+  border-radius:18px;
+  background:#fbfffc;
+}
+
+.task-row strong{
+  display:block;
+  color:var(--ink);
+}
+
+.task-row small{
+  color:var(--muted);
+}
+
+.done{
+  opacity:.55;
+  text-decoration:line-through;
+}
+
+.message-orb,.orb-core,.motivation-symbol-wrap,.motivation-symbol,.motivation-ray,.flame,.faith-lantern{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  .dashboard-grid > *,
+  .dashboard-grid > .task-list,
+  .dashboard-grid > .task-card{
+    grid-column:1/-1;
+  }
+
+  .quick-hero{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:600px){
+  .dashboard-pro{
+    gap:14px;
+  }
+
+  .card{
+    border-radius:22px !important;
+  }
+
+  .quick-hero{
+    border-radius:24px;
+    padding:18px;
+  }
+
+  .quick-hero h1{
+    font-size:34px;
+  }
+
+  .main-message,.faith-card-pro p{
+    font-size:18px;
+  }
+
+  .motivation-pro h2,.faith-card-pro h2{
+    font-size:26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*:before,*:after{
+    animation:none !important;
+    transition:none !important;
+  }
+}
